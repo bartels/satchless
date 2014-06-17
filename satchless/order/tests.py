@@ -3,7 +3,7 @@ from decimal import Decimal
 import os
 
 from django.contrib.auth.models import User
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.test import Client
 

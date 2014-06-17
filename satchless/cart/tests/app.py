@@ -2,7 +2,7 @@
 import os
 
 from decimal import Decimal
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from django.core.exceptions import ObjectDoesNotExist
 import django.forms
 from django.http import HttpResponse

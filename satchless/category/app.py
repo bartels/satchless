@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 import django.db.models
 from django.http import Http404
 from django.http import HttpResponseNotFound
