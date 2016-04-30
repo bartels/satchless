@@ -67,8 +67,14 @@ class AddToCartHandler(object):
                                                  result=form_result,
                                                  request=request)
                     if request.is_ajax():
-                        # FIXME: add cart details like number of items and new total
-                        return JSONResponse({})
+                        resp_data = {
+                            'new_quantity': form_result.new_quantity,
+                            'quantity_delta': form_result.quantity_delta,
+                        }
+                        if hasattr(form_result.cart_item, 'as_dict'):
+                            resp_data['item'] = form_result.cart_item.as_dict
+
+                        return JSONResponse(resp_data)
                     return redirect(self.cart_app.reverse('details'))
                 elif request.is_ajax() and form.errors:
                     data = dict(form.errors)
